@@ -3,14 +3,21 @@ function takeANumber(array, name) {
   return ("Welcome, " + name + ". You are number " + array.length + " in line.");
 }
 
+var number = 0;
+
+function takeANumber2(array) {
+  array.push(number + 1);
+  number++;
+  return ("Welcome you are number " + number);
+}
+
 function nowServing(katzDeliLine) {
-  for (var i = katzDeliLine.length; i > 0; i--) {
+  if (katzDeliLine.length === 0) {
+    return "There is nobody waiting to be served!";
+  } else {
     var name = katzDeliLine[0];
     katzDeliLine.shift();
     return ("Currently serving " + name + ".");
-  }
-  if (katzDeliLine.length === 0) {
-    return "There is nobody waiting to be served!";
   }
 }
 
